@@ -123,6 +123,10 @@ python compile_schism.py --source-dir schism-master --target pschism
 # Use parallel jobs
 python compile_schism.py --source-dir schism-master --jobs 8
 
+# Pass extra arguments to CMake configure (repeatable)
+python compile_schism.py --source-dir schism-master \
+  --cmake-arg=-DCMAKE_Fortran_FLAGS=-I/usr/include
+
 # Preview commands without running compilation
 python compile_schism.py --source-dir schism-master --dry-run
 ```
@@ -132,6 +136,7 @@ What it does:
 - Validates the source directory exists
 - Detects build files (`CMakeLists.txt` or `Makefile`)
 - Runs configure/build commands and prints each command before execution
+- Supports passing additional configure flags to CMake via repeatable `--cmake-arg`
 
 ## SCHISM build requirements (besides Intel Fortran)
 

@@ -42,6 +42,16 @@ def parse_args() -> argparse.Namespace:
         help="Optional CMake generator (example: Ninja)",
     )
     parser.add_argument(
+        "--cmake-arg",
+        action="append",
+        default=[],
+        help=(
+            "Additional argument to pass to CMake configure step. "
+            "Repeat for multiple arguments, for example: "
+            "--cmake-arg=-DCMAKE_Fortran_FLAGS=-I/usr/include"
+        ),
+    )
+    parser.add_argument(
         "--target",
         default=None,
         help="Optional build target (example: pschism)",
@@ -100,6 +110,8 @@ def cmake_build(args: argparse.Namespace, source_dir: Path) -> None:
     configure_cmd = ["cmake", "-S", str(cmake_root), "-B", str(build_dir)]
     if args.generator:
         configure_cmd.extend(["-G", args.generator])
+    if args.cmake_arg:
+        configure_cmd.extend(args.cmake_arg)
 
     build_cmd = ["cmake", "--build", str(build_dir)]
     if args.target:
