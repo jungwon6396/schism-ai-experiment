@@ -63,6 +63,12 @@ Or for Linux:
 python install_intel_fortran.py --os linux --installer /path/to/intel-fortran-essentials-2025.x.x_offline.sh --execute
 ```
 
+Linux with sudo:
+
+```bash
+python install_intel_fortran.py --os linux --installer /path/to/intel-fortran-essentials-2025.x.x_offline.sh --execute --sudo
+```
+
 Dry run (prints the command without installing):
 
 ```bash
