@@ -75,6 +75,15 @@ Dry run (prints the command without installing):
 python install_intel_fortran.py --os windows --installer C:\path\to\intel-fortran-essentials-2025.x.x_offline.exe
 ```
 
+## SCHISM build requirements (besides Intel Fortran)
+
+According to the SCHISM compilation guide, these are typically required in addition to a Fortran compiler:
+
+- C compiler and MPI wrappers (`mpif90`, `mpicc`)
+- NetCDF library (NetCDF-4 recommended)
+- Python and Perl
+- Build system: GNU Make or CMake
+
 ## Notes
 
 - The SCHISM script downloads source code, not a prebuilt installer
