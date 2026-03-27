@@ -76,6 +76,15 @@ Dry run (prints the command without installing):
 python install_intel_fortran.py --os windows --installer C:\path\to\intel-fortran-essentials-2025.x.x_offline.exe
 ```
 
+## SCHISM build requirements (besides Intel Fortran)
+
+According to the SCHISM compilation guide, these are typically required in addition to a Fortran compiler:
+
+- C compiler and MPI wrappers (`mpif90`, `mpicc`)
+- NetCDF library (NetCDF-4 recommended)
+- Python and Perl
+- Build system: GNU Make or CMake
+
 ## Run check_schism_prereqs.sh
 
 ```bash
@@ -90,15 +99,6 @@ This will report whether the following are installed:
 - NetCDF (via `nc-config`, `nf-config`, or `pkg-config netcdf`)
 - `python3` and `perl`
 - `make` and `cmake`
-
-## SCHISM build requirements (besides Intel Fortran)
-
-According to the SCHISM compilation guide, these are typically required in addition to a Fortran compiler:
-
-- C compiler and MPI wrappers (`mpif90`, `mpicc`)
-- NetCDF library (NetCDF-4 recommended)
-- Python and Perl
-- Build system: GNU Make or CMake
 
 ## Notes
 
