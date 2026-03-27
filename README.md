@@ -8,6 +8,7 @@ SCHISM modeling and SST prediction experiments with AI integration.
 - `download_schism.py`: downloads the official SCHISM source ZIP from GitHub and extracts it into the current directory
 - `download_intel_fortran.py`: downloads Intel Fortran Essentials offline installer for Windows or Linux
 - `install_intel_fortran.py`: runs the Intel Fortran Essentials offline installer in silent mode
+- `check_schism_prereqs.sh`: checks whether SCHISM build prerequisites are installed
 
 ## Run hello.py
 
@@ -74,6 +75,21 @@ Dry run (prints the command without installing):
 ```bash
 python install_intel_fortran.py --os windows --installer C:\path\to\intel-fortran-essentials-2025.x.x_offline.exe
 ```
+
+## Run check_schism_prereqs.sh
+
+```bash
+chmod +x check_schism_prereqs.sh
+./check_schism_prereqs.sh
+```
+
+This will report whether the following are installed:
+
+- Fortran compiler (ifx/ifort/gfortran)
+- `mpif90` and `mpicc`
+- NetCDF (via `nc-config`, `nf-config`, or `pkg-config netcdf`)
+- `python3` and `perl`
+- `make` and `cmake`
 
 ## SCHISM build requirements (besides Intel Fortran)
 
