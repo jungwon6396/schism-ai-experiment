@@ -11,6 +11,7 @@ SCHISM modeling and SST prediction experiments with AI integration.
 - `check_schism_prereqs.sh`: checks whether SCHISM build prerequisites are installed
 - `install_schism_deps_ubuntu20.sh`: installs SCHISM build dependencies on Ubuntu 20.04 if missing
 - `compile_schism.py`: compiles SCHISM from local source using CMake (default) or Make
+- `run_schism_test_suite.py`: checks out the official SCHISM verification tests (SVN) and runs a selected test case
 
 ## Check Linux distribution
 
@@ -161,6 +162,29 @@ This will report whether the following are installed:
 - NetCDF (via `nc-config`, `nf-config`, or `pkg-config netcdf`)
 - `python3` and `perl`
 - `make` and `cmake`
+
+## Download and run SCHISM test suite
+
+The official SCHISM manual documents that verification tests are distributed via SVN:
+
+- https://schism-dev.github.io/schism/master/getting-started/test_suite.html
+- Checkout URL: `https://columbia.vims.edu/schism/schism_verification_tests`
+
+```bash
+# Checkout tests and run the default case (Test_QuarterAnnulus) using run_test(.sh)
+python run_schism_test_suite.py
+
+# Update an existing checkout and run a different case
+python run_schism_test_suite.py --update --case Test_Chezy
+
+# Preview commands without executing
+python run_schism_test_suite.py --dry-run
+```
+
+Notes:
+
+- `svn` must be installed (`sudo apt install subversion` on Ubuntu/WSL).
+- By default, the script looks for `run_test` or `run_test.sh` in the selected case directory.
 
 ## Notes
 
