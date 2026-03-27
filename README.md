@@ -9,6 +9,7 @@ SCHISM modeling and SST prediction experiments with AI integration.
 - `download_intel_fortran.py`: downloads Intel Fortran Essentials offline installer for Windows or Linux
 - `install_intel_fortran.py`: runs the Intel Fortran Essentials offline installer in silent mode
 - `check_schism_prereqs.sh`: checks whether SCHISM build prerequisites are installed
+- `install_schism_deps_ubuntu20.sh`: installs SCHISM build dependencies on Ubuntu 20.04 if missing
 
 ## Check Linux distribution
 
@@ -87,6 +88,20 @@ Dry run (prints the command without installing):
 ```bash
 python install_intel_fortran.py --os windows --installer C:\path\to\intel-fortran-essentials-2025.x.x_offline.exe
 ```
+
+## Run install_schism_deps_ubuntu20.sh
+
+```bash
+chmod +x install_schism_deps_ubuntu20.sh
+./install_schism_deps_ubuntu20.sh
+```
+
+This will install missing packages for Ubuntu 20.04:
+
+- `build-essential`, `gfortran`, `make`, `cmake`, `pkg-config`
+- `openmpi-bin`, `libopenmpi-dev`
+- `libnetcdf-dev`, `libnetcdff-dev`, `libhdf5-dev`
+- `python3`, `perl`
 
 ## SCHISM build requirements (besides Intel Fortran)
 
