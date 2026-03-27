@@ -10,6 +10,18 @@ SCHISM modeling and SST prediction experiments with AI integration.
 - `install_intel_fortran.py`: runs the Intel Fortran Essentials offline installer in silent mode
 - `check_schism_prereqs.sh`: checks whether SCHISM build prerequisites are installed
 
+## Check Linux distribution
+
+```bash
+cat /etc/os-release
+```
+
+Or a more concise command:
+
+```bash
+. /etc/os-release && echo "$PRETTY_NAME"
+```
+
 ## Run hello.py
 
 ```bash
